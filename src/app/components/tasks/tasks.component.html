@@ -1,0 +1,10 @@
+<!-- //https://stackoverflow.com/questions/37944199/what-exactly-event-object-do-in-angular-2#comment81591709_37944199 -->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleTask)="toggleTask(task)"
+  >{{ task.text }}</app-task-item
+>
